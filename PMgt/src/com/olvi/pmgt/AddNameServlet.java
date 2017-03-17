@@ -39,11 +39,6 @@ public class AddNameServlet extends HttpServlet {
 			resp.setContentType("application/json");
 			resp.getWriter().write(json.toString());
 			
-			// redirect
-			// resp.sendRedirect("/NameApplication.jsp");			
-			
-		    // req.getRequestDispatcher("/NameApplication.jsp").forward(req, resp);
-			
 		} catch (JSONException e) {
 			LOGGER.log(Level.SEVERE, "Exception occurred while parsing json.", e);
 		}catch (Exception e) {
