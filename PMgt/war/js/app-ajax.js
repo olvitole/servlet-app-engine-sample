@@ -15,8 +15,7 @@
 							name : $('#name').val()
 						},
 						success : function(responseText) {
-							$('#ajaxGetUserServletResponse').text(
-									JSON.stringify(responseText));
+							$('#ajaxGetUserServletResponse').text("Hello: " + responseText.name);
 						}
 					});
 				});

@@ -54,7 +54,7 @@
 	<br>
 	<div class="headline">JSON response parsing:</div>
 	<br>
-	<div id="ajaxGetUserServletResponse"></div>
+	<div id="ajaxGetUserServletResponse">Hello:</div>
 	<br>
 	<br>
 
