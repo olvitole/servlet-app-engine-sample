@@ -10,13 +10,6 @@ import com.olvi.pmgt.model.NameModel;
 public enum Dao {
 	INSTANCE;
 
-	public List<NameModel> listNameModels() {
-		EntityManager em = EMFService.get().createEntityManager();
-		// read the existing entries
-		Query q = em.createQuery("select m from NameModel m");
-		List<NameModel> NameModels = q.getResultList();
-		return NameModels;
-	}
 
 	public void add(String ip, String name) {
 		synchronized (this) {
@@ -27,7 +20,7 @@ public enum Dao {
 		}
 	}
 
-	public List<NameModel> getNameModels() {
+	public List<NameModel> listNameModels() {
 		EntityManager em = EMFService.get().createEntityManager();
 		Query q = em
 				.createQuery("select t from NameModel t");
@@ -35,13 +28,4 @@ public enum Dao {
 		return NameModels;
 	}
 
-	public void remove(long id) {
-		EntityManager em = EMFService.get().createEntityManager();
-		try {
-			NameModel NameModel = em.find(NameModel.class, id);
-			em.remove(NameModel);
-		} finally {
-			em.close();
-		}
-	}
 }
